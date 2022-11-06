@@ -1,0 +1,8 @@
+extends master
+block content 
+    form(action="/", method="POST" id="add-url")
+        legend Add a URL
+        .field
+            input(type="url" name="urlOriginal" id="urlOriginal" placeholder="Enter a URL" required)
+        .field.send 
+            input(type="submit" class="btn" value="Shorten")
