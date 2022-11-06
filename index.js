@@ -3,6 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+require('dotenv').config();
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //Connect Mongo
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/urlShortener', {
+mongoose.connect(process.env.MONGO_CONN, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     "auth": { "authSource": "admin" },
