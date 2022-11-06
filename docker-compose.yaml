@@ -1,11 +1,11 @@
 version: '3'
 services:
-    # nodejs:
-    #     image: node:latest
-    #     ports:
-    #         - 3000:3000
-    #     depends_on:
-    #         - mongodb
+    nodejs:
+        image: actividad_2:v1
+        ports:
+            - 3000:3000
+        depends_on:
+            - mongodb
     mongodb:
         image: mongo
         ports:
